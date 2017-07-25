@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        android:background="@color/white"
+        style="@style/top_relativelayout" >
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/back_home_button"
+            android:background="@drawable/selector_shape_bg"
+            android:text="取消"/>
+        
+        <TextView
+            android:id="@+id/text"
+            style="@style/top_layout_text"
+            android:layout_width="180dp"
+            android:text="上传图文"
+            android:textColor="@color/text_color_gray" />
+
+        <Button
+            android:id="@+id/btn_save"
+            style="@style/top_right_button"
+            android:background="@drawable/selector_shape_bg"
+            android:text="提交"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_line" />
+
+    <EditText
+        android:id="@+id/et_text"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="请输入信息..."
+        android:padding="15dp"
+        android:textColor="@color/text_color_gray" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/iv_photo1"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/upload_add_bg" />
+        
+        <ImageView 
+            android:id="@+id/iv_delete"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete_pic"
+            android:layout_gravity="right"/>
+
+    </FrameLayout>
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textColor="@color/text_color_gray"
+        android:text="注:上传成功后，需要等待服务端审核后才能显示在软件中供所有用户查看，审核时间1-2日"/>
+
+</LinearLayout>

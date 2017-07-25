@@ -1,18 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.suo.demo.MainActivity">
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        style="@style/top_relativelayout" >
+
+        <Button
+            android:id="@+id/btn_refresh"
+            style="@style/back_home_button"
+            android:background="@drawable/selector_shape_bg"
+            android:text="刷新"/>
+        
+        <TextView
+            android:id="@+id/text"
+            style="@style/top_layout_text"
+            android:layout_width="180dp"
+            android:text="美图Show"
+            android:textColor="@color/text_color_gray" />
+
+        <Button
+            android:id="@+id/user_add"
+            style="@style/top_right_button"
+            android:background="@drawable/selector_shape_bg"
+            android:text="添加" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.suo.image.view.MyGridView
+                android:id="@+id/imageGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="10dp"
+                android:numColumns="2"
+                android:verticalSpacing="10dp" />
+
+            <Button
+                android:id="@+id/more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/more_selector"
+                android:text="more"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

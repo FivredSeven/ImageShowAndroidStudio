@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#33000000"
+    android:orientation="vertical"
+    android:padding="5dip" >
+    
+    <TextView
+         android:id="@+id/tv_image_description"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center_horizontal"
+         android:text="第一个标题"
+         android:textColor="@color/orange"
+         android:textSize="14sp" />
+
+     <LinearLayout
+         android:id="@+id/ll_points"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center_horizontal"
+         android:layout_marginTop="5dip"
+         android:orientation="horizontal" >
+     </LinearLayout>
+    
+</LinearLayout>
