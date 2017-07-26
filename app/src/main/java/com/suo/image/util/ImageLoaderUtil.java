@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
@@ -14,6 +15,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.utils.L;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.suo.demo.R;
+import com.suo.image.ImageApp;
 
 import android.graphics.Bitmap;
 import android.os.Environment;
@@ -219,12 +221,21 @@ public class ImageLoaderUtil {
 	}
 
 	public void loadImageByGlide(String url, ImageView imageView, int resId) {
-		if (imageView.getScaleType() == ImageView.ScaleType.CENTER_CROP) {
-			Glide.with(imageView.getContext()).load(url).asBitmap().centerCrop().placeholder(resId).into(imageView);
-		} else if (imageView.getScaleType() == ImageView.ScaleType.FIT_CENTER) {
-			Glide.with(imageView.getContext()).load(url).asBitmap().fitCenter().placeholder(resId).into(imageView);
+		if (imageView.getScaleType() == ImageView.ScaleType.FIT_CENTER) {
+			if (imageView.getWidth() < Density.getSceenWidth(ImageApp.getAppContext()) / 2) {
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().format(DecodeFormat.PREFER_RGB_565).fitCenter().placeholder(resId).into(imageView);
+			} else {
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().fitCenter().placeholder(resId).into(imageView);
+			}
+
 		} else {
-			Glide.with(imageView.getContext()).load(url).asBitmap().centerCrop().placeholder(resId).into(imageView);
+			if (imageView.getWidth() < Density.getSceenWidth(ImageApp.getAppContext()) / 2) {
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().format(DecodeFormat.PREFER_RGB_565).centerCrop().placeholder(resId).into(imageView);
+			} else {
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().centerCrop().placeholder(resId).into(imageView);
+			}
+
+
 		}
 	}
 }

@@ -629,7 +629,7 @@ public class MyHomeActivity extends BaseActivity {
 		if (resultCode != 0) {
 			switch (requestCode) {
 			case IMAGE_REQUEST_CODE:
-				path = getPath(data.getData());
+				path = ImageUtils.getPath(this, data.getData());
 				break;
 			case CAMERA_REQUEST_CODE:
 				File tempFile = new File(

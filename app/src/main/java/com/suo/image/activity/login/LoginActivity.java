@@ -119,9 +119,9 @@ public class LoginActivity extends BaseActivity {
                     BmobUser user = new BmobUser();
                     user.setUsername(username);
                     user.setPassword(password);
-                    user.login(new SaveListener<String>() {
+                    user.login(new SaveListener<BmobUser>() {
                         @Override
-                        public void done(String s, BmobException e) {
+                        public void done(BmobUser s, BmobException e) {
                             if (e == null) {
                                 Preference.putString("username", username);
                                 Preference.putString("password", password);

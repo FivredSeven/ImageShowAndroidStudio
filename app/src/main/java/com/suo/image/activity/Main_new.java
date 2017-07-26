@@ -399,6 +399,7 @@ public class Main_new extends BaseActivity {
 
 //            fb = FinalBitmap.create(context);
 //            fb.display(image_grid, bean.getImageUrl());
+//            Glide.with(Main_new.this).load(bean.getImageUrl()).asBitmap().centerCrop().placeholder(R.drawable.default_image).into(image_grid);
             ImageLoaderUtil.getInstance().loadImageByGlide(bean.getImageUrl(), image_grid, R.drawable.default_image);
             // SimpleImageLoader.display(context, viewHolder.image, url, R.drawable.default_image);
             FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) image_grid.getLayoutParams();
