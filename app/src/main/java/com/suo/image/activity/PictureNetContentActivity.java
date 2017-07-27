@@ -785,6 +785,7 @@ public class PictureNetContentActivity extends BaseActivity implements IWXAPIEve
 
             final ContentBean contentBean = (ContentBean) getItem(position);
             String url = contentBean.getContentUrl();
+            Log.e("wuhq", "url:"+url);
             ImageLoaderUtil.getInstance().loadImageByGlide(url, image, R.drawable.default_image);
             // fb.display(image, url, bm);
             // SimpleImageLoader.display(context, image, url, R.drawable.default_image);

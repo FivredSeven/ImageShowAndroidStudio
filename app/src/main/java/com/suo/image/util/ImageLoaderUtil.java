@@ -223,16 +223,16 @@ public class ImageLoaderUtil {
 	public void loadImageByGlide(String url, ImageView imageView, int resId) {
 		if (imageView.getScaleType() == ImageView.ScaleType.FIT_CENTER) {
 			if (imageView.getWidth() < Density.getSceenWidth(ImageApp.getAppContext()) / 2) {
-				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().format(DecodeFormat.PREFER_RGB_565).fitCenter().placeholder(resId).into(imageView);
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().format(DecodeFormat.PREFER_RGB_565).dontAnimate().fitCenter().placeholder(resId).into(imageView);
 			} else {
-				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().fitCenter().placeholder(resId).into(imageView);
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().dontAnimate().fitCenter().placeholder(resId).into(imageView);
 			}
 
 		} else {
 			if (imageView.getWidth() < Density.getSceenWidth(ImageApp.getAppContext()) / 2) {
-				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().format(DecodeFormat.PREFER_RGB_565).centerCrop().placeholder(resId).into(imageView);
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().format(DecodeFormat.PREFER_RGB_565).dontAnimate().centerCrop().placeholder(resId).into(imageView);
 			} else {
-				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().centerCrop().placeholder(resId).into(imageView);
+				Glide.with(ImageApp.getAppContext()).load(url).asBitmap().dontAnimate().centerCrop().placeholder(resId).into(imageView);
 			}
 
 
